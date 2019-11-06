@@ -30,7 +30,7 @@ var server = http.createServer(function (request, response) {
         response.statusCode = 200
         response.setHeader('Content-Type', 'text/html;charset=utf-8')
         var accept = request.headers["accept"]
-        response.write(`二哈`)
+        response.write(`旺哥在请求，赶紧回应！`)
         response.end()
     } else if (path === '/x') {
         response.statusCode = 200
