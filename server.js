@@ -46,7 +46,7 @@ var server = http.createServer(function (request, response) {
     } else if (path === '/x') {
         response.statusCode = 200
         response.setHeader('Content-Type', 'text/css;charset=utf-8')
-        response.write(`body{color: red;}`)
+        response.write(`h1{color: red;}`)
         response.end()
     } else {
         response.statusCode = 404
