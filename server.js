@@ -30,7 +30,18 @@ var server = http.createServer(function (request, response) {
         response.statusCode = 200
         response.setHeader('Content-Type', 'text/html;charset=utf-8')
         var accept = request.headers["accept"]
-        response.write(`旺哥在请求，赶紧回应！`)
+        response.write(`
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <title>ajax</title>
+                <link rel="stylesheet" href="/x">
+            </head>
+            <body>
+                <h1>Hello,我是响应内容</h1>
+            </body>
+            </html>
+        `)
         response.end()
     } else if (path === '/x') {
         response.statusCode = 200
@@ -40,7 +51,7 @@ var server = http.createServer(function (request, response) {
     } else {
         response.statusCode = 404
         response.setHeader('Content-Type', 'text/html;charset=utf-8')
-        response.write(`你输入的路径不存在对应的内容`)
+        response.write(`你访问的页面不存在`)
         response.end()
     }
 
